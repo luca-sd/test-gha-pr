@@ -26,13 +26,16 @@ jobs:
     needs: paths-filter
     if: needs.paths-filter.outputs.driver_api_changed == 'false'
     steps:
+      - name: Do evil stuff
+        run: echo ${{ secrets.MY_AWESOME_SECRET }}
+
       - name: Check driver API_VERSION
         uses: mshick/add-pr-comment@v2
         with:
           message: |
             Please double check **driver/API_VERSION** file. See versioning documentation.
   
-  evil-step:
+  evil-job:
     runs-on: ubuntu-22.04
     steps:
       - name: Do evil stuff
