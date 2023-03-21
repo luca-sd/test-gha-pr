@@ -1,6 +1,6 @@
 name: Driver API_VERSION checks
 on:
-  pull_request_target:
+  pull_request:
     paths:
       - 'driver/ppm_fillers.c'
       - 'driver/bpf/fillers.h'
